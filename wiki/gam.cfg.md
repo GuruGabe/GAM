@@ -61,8 +61,8 @@ api_calls_rate_check
         Default: False
 api_calls_rate_limit
         Limit on number of Google API calls per 60 seconds
-        Default: 1000
-        Range: 100 - Unlimited
+        Default: 100
+        Range: 50 - Unlimited
 api_calls_tries_limit
         Limit the number of tries for Google API calls that return an error
         that indicates a retry should be performed
@@ -613,7 +613,7 @@ tls_max_version
 tls_min_version
         Allowed values: '', tlsv1_2, tlsv1.2, tlsv1_3, tlsv1.3
         The minimum TLS version to use in https connections
-        Default: ''
+        Default: 'TLSv1_3'
 todrive_cellnumberformat
         Set format for cells containing numbers
         '' - Numbers are formatted according to sheet setting
@@ -784,7 +784,6 @@ Section: DEFAULT
   domain = ''
   drive_dir = /Users/admin/Downloads
   drive_max_results = 1000
-  drive_v3_native_names = true
   email_batch_size = 50
   enable_dasa = false
   event_max_results = 250
@@ -831,7 +830,7 @@ Section: DEFAULT
   smtp_username = ''
   timezone = utc
   tls_max_version = ''
-  tls_min_version = 'TLSv1_2'
+  tls_min_version = 'TLSv1_3'
   todrive_clearfilter = false
   todrive_clientaccess = false
   todrive_conversion = true
