@@ -5185,11 +5185,15 @@ def shortenURL(long_url):
   except:
     return long_url
 
-def runSqliteQuery(db_file, query):
+def runSqliteQuery(db_file, query, params=()):
+  # params are bound by sqlite itself (use ? placeholders in query) so values are never pasted into the SQL text
   conn = sqlite3.connect(db_file)
-  curr = conn.cursor()
-  curr.execute(query)
-  return curr.fetchone()[0]
+  try:
+    curr = conn.cursor()
+    curr.execute(query, params)
+    return curr.fetchone()[0]
+  finally:
+    conn.close()
 
 def refreshCredentialsWithReauth(credentials):
   def gcloudError():
@@ -5229,7 +5233,7 @@ def refreshCredentialsWithReauth(credentials):
   token_file = f'{token_path}/access_tokens.db'
   try:
     credentials._rapt_token = runSqliteQuery(token_file,
-            f'SELECT rapt_token FROM access_tokens WHERE account_id = "{admin_email}"')
+            'SELECT rapt_token FROM access_tokens WHERE account_id = ?', (admin_email,))
   except TypeError:
     gcloudError()
   if not credentials._rapt_token:
@@ -44504,7 +44508,7 @@ def md5MatchesFile(filename, expected_md5, j=0, jcount=0):
   Act.Set(Act.VERIFY)
   try:
     f = openFile(filename, 'rb')
-    hash_md5 = hashlib.md5()
+    hash_md5 = hashlib.md5(usedforsecurity=False) # integrity check against Drive's md5Checksum, not a security use; also works on FIPS-enabled systems
     for chunk in iter(lambda: f.read(4096), b""):
       hash_md5.update(chunk)
     closeFile(f)
