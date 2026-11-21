@@ -45808,7 +45808,7 @@ def doUpdateVaultHold():
   if body:
     try:
       hold = callGAPI(v.matters().holds(), 'update',
-                      throwReas=[GAPI.NOT_FOUND, GAPI.BAD_REQUEST, GAPI.FORBIDDEN, GAPI.PERMISSION_DENIED, GAPI.INVALID_ARGUMENT],
+                      throwReasons=[GAPI.NOT_FOUND, GAPI.BAD_REQUEST, GAPI.FORBIDDEN, GAPI.PERMISSION_DENIED, GAPI.INVALID_ARGUMENT],
                       matterId=matterId, holdId=holdId, body=body)
       entityActionPerformed([Ent.VAULT_MATTER, matterNameId, Ent.VAULT_HOLD, holdNameId])
     except (GAPI.notFound, GAPI.badRequest, GAPI.forbidden, GAPI.permissionDenied, GAPI.invalidArgument) as e:
@@ -53534,7 +53534,7 @@ def _batchRemoveItemsFromCourse(croom, courseId, i, count, removeItems, removeTy
                  throwReasons=[GAPI.NOT_FOUND, GAPI.FORBIDDEN, GAPI.PERMISSION_DENIED,
                                GAPI.QUOTA_EXCEEDED, GAPI.SERVICE_NOT_AVAILABLE, GAPI.FAILED_PRECONDITION],
                  retryReasons=[GAPI.NOT_FOUND, GAPI.SERVICE_NOT_AVAILABLE], triesLimit=0 if reason != GAPI.NOT_FOUND else 3,
-                 courseId=addCourseIdScope(ri[RI_ENTITY]), body=rbody, fields='')
+                 courseId=addCourseIdScope(ri[RI_ENTITY]), fields='', **rbody)
       except GAPI.notFound:
         entityActionFailedWarning([Ent.COURSE, ri[RI_ENTITY], removeType, riItem], Msg.DOES_NOT_EXIST, int(ri[RI_J]), int(ri[RI_JCOUNT]))
       except GAPI.forbidden:
