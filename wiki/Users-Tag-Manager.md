@@ -61,7 +61,7 @@ By default, Gam displays the accounts as an indented list of keys and values.
 * `formatjson` - Display the account in JSON format
 
 ```
-gam <UserTypeEntity> print tagmanagerccounts [todrive <ToDriveAttribute>*]
+gam <UserTypeEntity> print tagmanageraccounts [todrive <ToDriveAttribute>*]
         [includegoogletags [<Boolean>]]
         [formatjson [quotechar <Character>]]
 ```

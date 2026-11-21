@@ -82,7 +82,7 @@ For multiple titles you can enter either of the following:
 * `gam create course-studentgroups course <CourseID> select "'Advanced Students','Beginner Students'"`
 * `gam create course-studentgroups course <CourseID> title"Advanced Students" title "Beginner Students"`
 
-See: [Lists and Collections](Lists-and-Collections)
+See: [Lists and Collections](Collections-of-Items)
 
 ## Manage student groups
 

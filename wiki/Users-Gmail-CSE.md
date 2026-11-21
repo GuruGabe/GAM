@@ -168,7 +168,7 @@ By default, Gam displays the disabled key pair as an indented list of keys and v
 ### Enable
 Turn on a client-side encryption key pair that was turned off. The key pair becomes active again for any associated client-side encryption identities.
 ```
-gam <UserTypeEntity> ensable csekeypair <KeyPairID>
+gam <UserTypeEntity> enable csekeypair <KeyPairID>
         [showpem] [showkaclsdata] [formatjson]
 ```
 By default, Gam displays the enabled key pair as an indented list of keys and values; the following option causes the output to be displayed in alternate forms.

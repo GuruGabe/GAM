@@ -48,7 +48,7 @@ The shell strips the `"` leaving a single argument `'d:Math Class'`; as gam is e
 
 For multiple aliases you must enter: `gam info courses "'d:Math Class','d:Science Class'"`
 
-See: [Lists and Collections](Lists-and-Collections)
+See: [Lists and Collections](Collections-of-Items)
 
 ## Manage membership for courses
 
