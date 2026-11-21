@@ -58643,7 +58643,7 @@ def printDriveActivity(users):
       try:
         result = callGAPI(cd.users(), 'get',
                           throwReasons=GAPI.USER_GET_THROW_REASONS+[GAPI.INVALID_INPUT],
-                          userKey=userId, fields='primaryEmail,name.fullName')
+                          userKey=userId, fields='primaryEmail,name(fullName)')
         entry = (result['primaryEmail'], result['name']['fullName'])
       except (GAPI.userNotFound, GAPI.domainNotFound, GAPI.domainCannotUseApis, GAPI.forbidden,
               GAPI.badRequest, GAPI.backendError, GAPI.systemError, GAPI.invalidInput):
