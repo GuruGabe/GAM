@@ -60,7 +60,7 @@ The `quotechar <Character>` option allows you to choose an alternate quote chara
 `quotechar` defaults to `gam.cfg/csv_output_quote_char`. When uploading CSV files to Google, double quote `"` should be used.
 
 ### Eliminate unwanted fields
-You can use [CSV Print Filtering](CSV-Print-Filtering) to reduce the amount of output.
+You can use [CSV Print Filtering](CSV-Output-Filtering) to reduce the amount of output.
 This command will drop all of the data.messages columns.
 ```
 gam config csv_output_header_drop_filter "^data.messages" redirect csv alerts.csv print alerts

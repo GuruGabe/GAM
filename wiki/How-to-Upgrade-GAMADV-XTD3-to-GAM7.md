@@ -124,7 +124,7 @@ e.g., D:\GAMADV-XTD3.
 
 These steps assume Command Prompt, adjust if you're using PowerShell.
 
-See: [Downloads-Installs-GAM7](Downloads-Installs-GAM7)
+See: [Downloads-Installs-GAM7](Downloads-Installs)
 
 ### Update to latest version, use current path `C:\GAMADV-XTD3`.
 You don't have to update path or scripts.

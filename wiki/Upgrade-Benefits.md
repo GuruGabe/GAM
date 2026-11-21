@@ -145,13 +145,13 @@ add/delete multiple students/teachers.
 
 When creating/updating courses, GAM7 can copy settings from another course.
 
-See: [Courses](Courses)
+See: [Courses](Classroom-Courses)
 
 ## Data Studio
 
 GAM7 supports commands to display Data Studio assets and display/manage Data Studio permissions
 
-See: [Users - Data Studio](Users-DataStudio)
+See: [Users - Data Studio](Users-Data-Studio)
 
 ## Drive File Copy and Move
 
@@ -227,7 +227,7 @@ See: [Users - Group Membership](Users-Group-Membership)
 
 GAM7 supports commands to manage and display Google Keep notes.
 
-See: [Users - Keep](Users-Keep)
+See: [Users - Keep](Users-Keep-Notes)
 
 ## Organizational Units
 

@@ -250,7 +250,7 @@ The shell strips the `"` leaving a single argument `'d:Math Class'`; as gam is e
 
 For multiple aliases you must enter: `gam info courses "'d:Math Class','d:Science Class'"`
 
-See: [Lists and Collections](Lists-and-Collections)
+See: [Lists and Collections](Collections-of-Items)
 
 ## Updating course owner
 When updating a course owner, the Classroom API generates an error if the new owner is not a co-teacher
